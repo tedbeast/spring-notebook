@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
  * Now we can automatically create beans by scanning the package for components and run all of the Controller
  * classes on startup. The @Bean annotation is not necessary in this class.
  *
- * (the 'exclude' portion is there to prevent SpringBoot from trying to autoconfigure a database connection.)
+ * (the 'exclude' portion is there to prevent Spring Boot from trying to autoconfigure a database connection.)
  */
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Application {
