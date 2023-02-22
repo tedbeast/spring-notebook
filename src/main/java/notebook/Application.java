@@ -7,11 +7,15 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 /**
- * Spring Boot is an additional project of Spring that enables automatic configuration of the project.
- * Now we can automatically create beans by scanning the package for components and run all of the Controller
- * classes on startup. The @Bean annotation is not necessary in this class.
+ * Spring Boot is an additional project of Spring that enables automatic configuration of the project. It introduces
+ * the @SpringBootApplication annotation, which combines the functionality of @ComponentScan, @Configuration
+ * as well as @EnableAutoConfiguration.
+ * Now we can automatically create beans by scanning the package for components, as well run all the Controller
+ * classes on startup. Manually defining beans using the @Bean annotation is not necessary in this class.
  *
  * (the 'exclude' portion is there to prevent Spring Boot from trying to autoconfigure a database connection.)
+ *
+ * There is no need to change anything in this class.
  */
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Application {

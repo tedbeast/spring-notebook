@@ -3,6 +3,7 @@ package notebook.Controller;
 import jakarta.websocket.server.PathParam;
 import notebook.Model.Entry;
 import notebook.Service.NotebookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,15 +16,22 @@ import java.util.List;
  * A @Controller is a special type of @Component, known as a Stereotype annotation. Stereotype annotations are
  * components that behave in a specific, stereotyped way - in this case, as a Controller written to service
  * HTTP requests. You can think of this as 'extending' @Component.
+ *
+ * The functionality of @Controller is provided by Spring MVC (model-view-controller), which is an important project
+ * that allows for the development of web applications using Spring.
  */
 @Controller
 public class NotebookController {
     NotebookService notebookService;
 
+    /**
+     * Autowire in a NotebookService into this Constructor (Constructor injection)
+     * @param notebookService NotebookService bean
+     */
+    @Autowired
     public NotebookController(NotebookService notebookService){
         this.notebookService = notebookService;
     }
-
     /**
      * This @RequestMapping annotation allows this method to handle HTTP requests on GET localhost:9000/entries for
      * retrieving a list of all notebook entries.

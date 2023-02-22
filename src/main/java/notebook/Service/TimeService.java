@@ -6,6 +6,8 @@ import java.util.Date;
 
 /**
  * TODO: mark this class as an @Component, so that it may be within the NotebookService class.
+ * Adding @Component will register this whole class as a Bean that should be managed by the Spring IOC
+ * (inversion-of-control) container.
  * This is a Service class that will be used to obtain the current time for notebook entries.
  */
 public class TimeService {
